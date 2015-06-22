@@ -159,6 +159,7 @@ var birthday = new Date();
 console.log(getVillainName(birthday));
 //bug1: 日期为一位数时，格式是0开头，用Number()把数字去掉。
 //bug2: 遍历对象用in语句。
+
 // 6.Recursive reverse string
 function reverse(str) {
     return str.length > 1 ? reverse(str.slice(1)) + str[0] : str;  // ello + h; llo + e + h; lo + l + e + h; o + l + l + e + h
@@ -170,3 +171,118 @@ function reverse(arr){
      return arr;
 } 
 console.log(reverse("hello world"));
+
+//7.Use map() to double the values in an array
+function double(array) {
+    // Use array.map() to return a new array with each value twice
+    // as large as the corresponding value in the passed in array.
+    return array.map(function(num) { return num*2; }); //注意简洁，函数不复杂可直接写
+}
+var arr = [1,2,3];
+console.log(double(arr));  //[2, 4, 6]
+
+//8.Character Concatenation
+function charConcat(string) {
+	//your code here
+	var str = "",
+		i,
+		len = Math.floor(string.length / 2);
+	for (i = 0; i < len; i++) {
+		str += string.charAt(i) + string.charAt(string.length - 1 - i) + (i + 1);
+	}
+	return str;
+}
+console.log(charConcat("abcdef"));  //af1be2cd3
+//9.Complete The Pattern #6 - Odd Ladder
+function pattern(n) {
+	var output = "",
+		i,
+		j;
+	// Happy Coding ^_^
+	(n % 2 === 0) && (n -= 1);
+	for (i = 1; i <= n; i += 2) {
+		for (j = 0; j < i; j++) {
+			output += i;
+		}
+		if(i != n) {
+			output += "\n";
+		}
+	}
+	return output;
+}
+console.log(pattern(5));  // 1\n333\n55555
+//10.Sum of the first nth term of Series
+//mine:
+function SeriesSum(n) {
+	// Happy Coding ^_^
+	var i,
+		j = 1,
+		sum = 0;
+	for (i = 0; i < n; i++) {
+		sum += (1 / j);
+		j = j + 3;
+	}
+	return sum.toFixed(2);
+}
+console.log(SeriesSum(3));  //1.39
+//others:
+function SeriesSum(n) {
+	// Happy Coding ^_^
+	var i,
+		sum = 0;
+	for (i = 0; i < n; i++) {
+		sum += 1 / (1 + i * 3);
+	}
+	return sum.toFixed(2);
+}
+console.log(SeriesSum(3));
+//11.Create Phone Number
+function createPhoneNumber(numbers) {
+	var str = "";
+	str = numbers.join("");
+	return "(" + str.slice(0, 3) + ")" + " " + str.slice(3, 6) + "-" + str.slice(6, 10);
+}
+console.log(createPhoneNumber([1,2,3,4,5,6,7,8,9,0])); // (123) 456-7890
+
+//12.Multiples of 3 and 5 （3和5的倍数）
+function solution(number) {
+	var i,
+		sum = 0;
+	for (i = 0; i < number; i++) {
+		(i % 3 === 0 ||　i % 5 === 0) && (sum += i);
+	}
+	return sum;
+}
+console.log(solution(20));
+// bug: 如果即是3的倍数，又是5的倍数，加了两次
+
+//13.Array.diff
+//mine
+function array_diff(a, b) {
+	var arr = [],
+		key, 
+		i,
+		j,
+		len = a.length,
+		p = -1;
+	if (b.length === 0) {
+		return a;
+	}
+	for (var i = 0; i < len; i++) {
+		for (key in b) {
+			(b[key] === a[i]) && (p = 1);
+			(p !== 1) && arr.push(a[i]);
+		}
+		p = -1;
+	}
+	return arr;
+}
+console.log(array_diff([1,2,2], [1])); //[2]
+//others:
+function array_diff(a, b) {
+	debugger
+	return a.filter(function(x) {
+		return b.indexOf(x) == -1;
+	});
+}
+console.log(array_diff([1,2,2,3,4], [1,4]));
