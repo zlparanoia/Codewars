@@ -15,3 +15,16 @@ coding practice in the Codewars
     4、Complete The Pattern #5-Even Ladder  
     5、Find Your Villain Name   
     6、Recursive reverse string
+    bug1: 日期为一位数时，格式是0开头，用Number()把数字去掉。
+    bug2: 遍历对象用in语句。
+
+### 6-22:   
+    7.Use map() to double the values in an array   
+    8.Character Concatenation   
+    9.Complete The Pattern #6 - Odd Ladder
+    10.Sum of the first nth term of Series    
+    11.Create Phone Number     
+    12.Multiples of 3 and 5 （3和5的倍数）     
+    13.Array.diff
+总结：注意简洁，函数不复杂可直接写。
+    
