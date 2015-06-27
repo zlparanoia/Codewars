@@ -27,4 +27,11 @@ coding practice in the Codewars
     12.Multiples of 3 and 5 （3和5的倍数）     
     13.Array.diff
 总结：注意简洁，函数不复杂可直接写。
+
+### 6-27:
+    14.Find the divisors! （找除数）
+    15.Playing with digits
+总结：//bug1: mul值作为一个幂结果，她的初始值应该是1而不是0，使用后还原为1；
+      //bug2: n值改变后不再是原值，之后再使用它时之前应先把值保存。
+      //Math.pow()：可返回x的y次幂。
     
