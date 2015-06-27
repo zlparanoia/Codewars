@@ -31,7 +31,7 @@ coding practice in the Codewars
 ### 6-27:
     14.Find the divisors! （找除数）
     15.Playing with digits
-总结：//bug1: mul值作为一个幂结果，她的初始值应该是1而不是0，使用后还原为1；
-      //bug2: n值改变后不再是原值，之后再使用它时之前应先把值保存。
-      //Math.pow()：可返回x的y次幂。
+总结：bug1: mul值作为一个幂结果，她的初始值应该是1而不是0，使用后还原为1；    
+      bug2: n值改变后不再是原值，之后再使用它时之前应先把值保存。  
+      Math.pow()：可返回x的y次幂。     
     
