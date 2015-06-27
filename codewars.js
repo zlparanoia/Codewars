@@ -286,3 +286,53 @@ function array_diff(a, b) {
 	});
 }
 console.log(array_diff([1,2,2,3,4], [1,4]));
+
+//14.Find the divisors! （找除数）
+function divisors(integer) {
+	var arr = [],
+		str = "",
+		i,
+		flag = -1;
+	for (i = 2; i < integer; i++) {
+		if (integer % i === 0) {
+			arr.push(i);
+			flag = 1;
+		}
+	}
+	if (flag === -1) {
+		str = integer + " is prime";
+		return str;
+	}
+	return arr;
+};
+console.log(divisors(25));
+
+//15.Playing with digits
+function digPow(n, p) {
+	var sum = 0,
+		i,
+		number = 0,
+		len,
+		mul = 1,
+		arr = [],
+		value = n;
+	while (n !== 0) {
+		number = n % 10;
+		n = Math.floor(n / 10);
+		arr.push(number);
+	}
+	arr = arr.reverse();
+	for (i = 0, len = arr.length; i < len; i++) {
+		mul = Math.pow(arr[i], p++);
+		sum += mul;
+		mul = 1;
+	}
+	if (sum % value !== 0) {
+		return -1;
+	}
+	return sum / value;
+}
+console.log(digPow(46288, 3));
+//bug1: mul值作为一个幂结果，她的初始值应该是1而不是0，使用后还原为1；
+//bug2: n值改变后不再是原值，之后再使用它时之前应先把值保存。
+// Math.pow()：可返回x的y次幂。
